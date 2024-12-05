@@ -2,20 +2,17 @@ package com.example.tablelayout
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
+import androidx.fragment.app.FragmentStatePagerAdapter
 
-class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class ViewPagerAdapter(fragmentManager: FragmentManager) : FragmentStatePagerAdapter(fragmentManager) {
 
-    private val fragmentList: ArrayList<Fragment> = ArrayList()
-    private val fragmentTitleList: ArrayList<String> = ArrayList()
+    private val fragmentList = ArrayList<Fragment>()
+    private val fragmentTitleList = ArrayList<String>()
 
-    init {
-        // Añadir fragmentos y títulos
-        fragmentList.add(ContactosFragment())  // Fragment para la primera pestaña
-        fragmentTitleList.add("Home")
-
-        fragmentList.add(CorreosFragment())  // Fragment para la segunda pestaña
-        fragmentTitleList.add("Settings")
+    // Añadir fragmentos al adaptador
+    fun addFragment(fragment: Fragment, title: String) {
+        fragmentList.add(fragment)
+        fragmentTitleList.add(title)
     }
 
     override fun getItem(position: Int): Fragment {

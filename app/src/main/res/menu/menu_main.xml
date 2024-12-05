@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
-    <item android:id="@+id/action_settings"
-        android:title="Preferencias"
-        android:icon="@android:drawable/ic_menu_preferences"
-        android:orderInCategory="1"
-        app:showAsAction="never"/>
-    <item android:id="@+id/btnInformacionApp"
-        android:title="Informacion app"
-        android:icon="@android:drawable/ic_menu_info_details"
-        android:orderInCategory="2"
-        app:showAsAction="ifRoom|withText"/>
-    <item android:id="@+id/btnMenuBuscar"
-        android:title="Buscar"
-        android:icon="@android:drawable/ic_menu_search"
-        android:orderInCategory="3"
-        app:showAsAction="always|collapseActionView"/>
-  
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Botón para Información -->
+    <item
+        android:id="@+id/fabInfo"
+        android:icon="@drawable/baseline_add_circle_outline_24"
+        android:title="Información"
+        app:showAsAction="ifRoom" />
+
+    <!-- Botón para Usuario -->
+    <item
+        android:id="@+id/fabUsuario"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="Usuario"
+        app:showAsAction="ifRoom" />
+
+    <!-- Botón para Hobbie -->
+    <item
+        android:id="@+id/fabHobbie"
+        android:icon="@drawable/baseline_bedroom_baby_24"
+        android:title="Hobbie"
+        app:showAsAction="ifRoom" />
 </menu>

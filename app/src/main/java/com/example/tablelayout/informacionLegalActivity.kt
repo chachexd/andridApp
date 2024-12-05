@@ -1,9 +1,9 @@
 package com.example.tablelayout
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.tablelayout.R
 
 class informacionLegalActivity : AppCompatActivity() {
 
@@ -14,21 +14,22 @@ class informacionLegalActivity : AppCompatActivity() {
         val btnAceptar = findViewById<Button>(R.id.btnAceptar)
         val btnCancelar = findViewById<Button>(R.id.btnCancelar)
 
-        // Obtén el nombre de usuario pasado desde LoginActivity
-        val username = intent.getStringExtra("username")
+        val username = intent.getStringExtra("username") // Obtener nombre de usuario
 
         btnAceptar.setOnClickListener {
-            // Si acepta los términos, pasa el nombre de usuario a MainActivity
-            val intent = Intent()
-            intent.putExtra("username", username)  // Pasa el nombre de usuario
-            setResult(RESULT_OK, intent)
-            finish()  // Termina esta actividad y vuelve a LoginActivity
+            val resultIntent = Intent()
+            resultIntent.putExtra("username", username)
+            resultIntent.putExtra("termsAccepted", "aceptado")  // Usuario acepta los términos
+            setResult(RESULT_OK, resultIntent)  // Result OK
+            finish()  // Regresar a MainActivity
         }
 
         btnCancelar.setOnClickListener {
-            // Si no acepta los términos, devuelve un resultado cancelado
-            setResult(RESULT_CANCELED)
-            finish()  // Termina esta actividad y vuelve a LoginActivity
+            val resultIntent = Intent()
+            resultIntent.putExtra("username", username)
+            resultIntent.putExtra("termsAccepted", "rechazado")  // Usuario rechaza los términos
+            setResult(RESULT_OK, resultIntent)  // Result OK
+            finish()  // Regresar a MainActivity
         }
     }
 }
